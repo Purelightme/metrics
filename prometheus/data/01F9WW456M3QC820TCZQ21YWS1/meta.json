@@ -1,0 +1,17 @@
+{
+	"ulid": "01F9WW456M3QC820TCZQ21YWS1",
+	"minTime": 1625529600000,
+	"maxTime": 1625536800000,
+	"stats": {
+		"numSamples": 194334,
+		"numSeries": 488,
+		"numChunks": 488
+	},
+	"compaction": {
+		"level": 1,
+		"sources": [
+			"01F9WW456M3QC820TCZQ21YWS1"
+		]
+	},
+	"version": 1
+}

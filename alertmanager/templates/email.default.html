@@ -1,0 +1,48 @@
+<h1>告警</h1>
+
+<p>
+    Receiver: {{ .Receiver }}
+    Status: {{ .Status }}
+    ExternalURL: {{ .ExternalURL }}
+</p>
+
+<p>
+    {{ range $v := .Alerts }}
+<div>
+    <p>
+        Labels:
+        {{ range $k,$v := .Labels }}
+        {{ $k }}:{{ $v }}
+        {{ end }}
+    </p>
+
+    <p>
+        Annotations:
+        {{ range $k,$v := .Annotations }}
+        {{ $k }}:{{ $v }}
+        {{ end }}
+    </p>
+
+    <p>
+        StartAt: {{ .StartsAt }}
+        GeneratorURL: {{ .GeneratorURL }}
+        Fingerprint: {{ .Fingerprint }}
+    </p>
+</div>
+{{ end }}
+</p>
+
+Group Labels:
+{{ range $k,$v := .GroupLabels }}
+    {{ $k }}:{{ $v }}
+{{ end }}
+
+Common Labels:
+{{ range $k,$v := .CommonLabels }}
+{{ $k }}:{{ $v }}
+{{ end }}
+
+Common Annotations:
+{{ range $k,$v := .CommonAnnotations }}
+{{ $k }}:{{ $v }}
+{{ end }}

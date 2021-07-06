@@ -1,0 +1,20 @@
+groups:
+  - name: CounterAlert
+    rules:
+      - alert: CounterTooLarge
+        expr: some_quick_counter > 10
+        for: 30s
+        labels:
+          level: error
+        annotations:
+          summary: "Instance {{$labels.instance}} down"
+          description: "{{$labels.instance}} of job {{$labels.job}} has been down for more than 30 seconds."
+  - name: GaugeAlert
+    rules:
+      - alert: GaugeEqualZero
+        expr: some_gauge == 0
+        labels:
+          level: info
+        annotations:
+          summary: "Instance {{$labels.instance}} down"
+          description: "{{$labels.instance}} of job {{$labels.job}} has been down"

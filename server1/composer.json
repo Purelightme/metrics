@@ -1,0 +1,6 @@
+{
+    "require": {
+        "promphp/prometheus_client_php": "^2.2",
+        "swoole/ide-helper": "^4.6"
+    }
+}
